@@ -12,3 +12,8 @@ class ProductManager():
     def show_total(self):
         total = sum(map(lambda p: p.price * p.quantity, self.products))
         print(f"Total worth of inventory: {total}")
+    
+    def remove_product(self, name):
+        for i in range(len(self.products)):
+            if self.products[i].name == name:
+                return self.products.pop(i)
